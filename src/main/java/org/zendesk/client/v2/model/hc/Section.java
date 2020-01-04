@@ -32,10 +32,6 @@ public class Section {
     /** The id of the category to which this section belongs */
     @JsonProperty("category_id")
     private Long categoryId;
-    
-    /** The id of the section to which this subsection belongs */
-    @JsonProperty("parent_section_id")
-    private Long parentSectionId;
 
     /** Whether the section is out of date */
     private Boolean outdated;
@@ -115,27 +111,11 @@ public class Section {
         return categoryId;
     }
 
-    /**
-     * Get the 
-	 * @return the parentSectionId
-	 */
-	public Long getParentSectionId() {
-		return parentSectionId;
-	}
-
-	public void setCategoryId(Long categoryId) {
+    public void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
     }
 
-    /**
-     * Make this section a subsection of another section.
-	 * @param parentSectionId the Id of the parent of this subsection
-	 */
-	public void setParentSectionId(Long parentSectionId) {
-		this.parentSectionId = parentSectionId;
-	}
-
-	public Boolean getOutdated() {
+    public Boolean getOutdated() {
         return outdated;
     }
 
@@ -187,7 +167,6 @@ public class Section {
                 ", htmlUrl='" + htmlUrl + '\'' +
                 ", categoryId='" + categoryId + '\'' +
                 ", outdated=" + outdated +
-                ", parentSectionId='" + parentSectionId + '\'' +
                 ", position=" + position +
                 ", translation_ids=" + translation_ids +
                 ", createdAt=" + createdAt +
